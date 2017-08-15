@@ -109,7 +109,7 @@ env:
   - DEP=986
 
 install:
-  - wget https://github.com/tcoupin/rok4/releases/download/0.25.4-travis/Rok4-0.25.4-Linux-amd64.tar.gz
+  - cd / && wget https://github.com/tcoupin/rok4/releases/download/0.25.4-travis/Rok4-0.25.4-Linux-amd64.tar.gz
   - cd / && tar -zxvf Rok4-0.25.4-Linux-amd64.tar.gz
 
 script:
