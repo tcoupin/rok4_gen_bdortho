@@ -1,0 +1,34 @@
+[ datasource ]
+filepath_conf = ./sources.txt
+
+[ pyramid ]
+pyr_data_path = ./pyramids/data
+pyr_desc_path = ./pyramids/descriptors
+pyr_name_new  = BDORTHO-5M
+
+; informations sur le TMS
+tms_path = ./
+tms_name = PM.tms
+
+dir_depth = 2
+
+; nombre de tuiles dans une dalle de la pyramide
+image_width         = 16
+image_height        = 16
+
+; informations relatives aux images
+compression         = jpg
+bitspersample       = 8
+sampleformat        = uint
+photometric         = rgb
+samplesperpixel     = 3
+interpolation       = bicubic
+
+color               = 200,200,255
+
+[ process ]
+
+path_shell = ./scripts_be4
+path_temp = ./temp_be4
+path_temp_common = ./temp_be4
+job_number = ${JOB_NUMBER}

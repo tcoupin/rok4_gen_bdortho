@@ -1,0 +1,5 @@
+
+[ 15 ]
+
+path_image = ../download/data/
+srs = IGNF:${PROJ}
