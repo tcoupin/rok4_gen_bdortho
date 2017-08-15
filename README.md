@@ -3,5 +3,3 @@
 Env var :
 
 - DEP : departement
-- DOCKER_USERNAME
-- DOCKER_PASSWORD
