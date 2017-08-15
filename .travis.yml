@@ -119,7 +119,7 @@ deploy:
   provider: releases
   api_key: $GH_TOKEN
   file_glob: true
-  file: *.tar.gz
+  file: '*.tar.gz'
   skip_cleanup: true
   on:
     repo: tcoupin/rok4_gen_bdortho
