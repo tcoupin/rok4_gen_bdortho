@@ -1,0 +1,126 @@
+language: bash
+
+
+env:
+  - DEP=001
+  - DEP=002
+  - DEP=003
+  - DEP=004
+  - DEP=005
+  - DEP=006
+  - DEP=007
+  - DEP=008
+  - DEP=009
+  - DEP=010
+  - DEP=011
+  - DEP=012
+  - DEP=013
+  - DEP=014
+  - DEP=015
+  - DEP=016
+  - DEP=017
+  - DEP=018
+  - DEP=019
+  - DEP=021
+  - DEP=022
+  - DEP=023
+  - DEP=024
+  - DEP=025
+  - DEP=026
+  - DEP=027
+  - DEP=028
+  - DEP=029
+  - DEP=02A
+  - DEP=02B
+  - DEP=030
+  - DEP=031
+  - DEP=032
+  - DEP=033
+  - DEP=034
+  - DEP=035
+  - DEP=036
+  - DEP=037
+  - DEP=038
+  - DEP=039
+  - DEP=040
+  - DEP=041
+  - DEP=042
+  - DEP=043
+  - DEP=044
+  - DEP=045
+  - DEP=046
+  - DEP=047
+  - DEP=048
+  - DEP=049
+  - DEP=050
+  - DEP=051
+  - DEP=052
+  - DEP=053
+  - DEP=054
+  - DEP=055
+  - DEP=056
+  - DEP=057
+  - DEP=058
+  - DEP=059
+  - DEP=060
+  - DEP=061
+  - DEP=062
+  - DEP=063
+  - DEP=064
+  - DEP=065
+  - DEP=066
+  - DEP=067
+  - DEP=068
+  - DEP=069
+  - DEP=070
+  - DEP=071
+  - DEP=072
+  - DEP=073
+  - DEP=074
+  - DEP=075
+  - DEP=076
+  - DEP=077
+  - DEP=078
+  - DEP=079
+  - DEP=080
+  - DEP=081
+  - DEP=082
+  - DEP=083
+  - DEP=084
+  - DEP=085
+  - DEP=086
+  - DEP=087
+  - DEP=088
+  - DEP=089
+  - DEP=090
+  - DEP=091
+  - DEP=092
+  - DEP=093
+  - DEP=094
+  - DEP=095
+  - DEP=971
+  - DEP=972
+  - DEP=973
+  - DEP=974
+  - DEP=975
+  - DEP=976
+  - DEP=977
+  - DEP=978
+  - DEP=986
+
+install:
+  - wget https://github.com/tcoupin/rok4/releases/download/0.25.4-travis/Rok4-0.25.4-Linux-amd64.tar.gz
+  - cd / && tar -zxvf Rok4-0.25.4-Linux-amd64.tar.gz
+
+script:
+  - bash doIt.sh
+
+deploy:
+  provider: releases
+  api_key: $GH_TOKEN
+  file_glob: true
+  file: *.tar.gz
+  skip_cleanup: true
+  on:
+    repo: tcoupin/rok4_gen_bdortho
+    tags: true
