@@ -4,7 +4,7 @@ filepath_conf = ./sources.txt
 [ pyramid ]
 pyr_data_path = ./pyramids/data
 pyr_desc_path = ./pyramids/descriptors
-pyr_name_new  = BDORTHO-5M
+pyr_name_new  = BDORTHO-5M-$DEP
 
 ; informations sur le TMS
 tms_path = ./

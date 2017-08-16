@@ -16,19 +16,19 @@ then
 	echo "Download departement $DEP"
 	mkdir download
 	cd download
-	curl -s "http://pro.ign.fr/bdortho-5m" | grep -o "https://wxs-tele[^\"]*" | grep BDORTHO | grep "D$DEP" > urls.txt
-	wget $(cat urls.txt | tr '\n' ' ')
-	cat $(ls -X *.7z) > data.7z
-        7zr x data.7z
-        mkdir data
-        find . -name "*.jp2" | xargs -I FILE mv FILE ./data
-        rm *.7z
-        rm -r BDORTHO*
+	curl -s "http://pro.ign.fr/bdortho-5m" | grep -o "https://wxs-tele[^\"]*" | grep BDORTHO | grep "D$DEP" > ../urls.txt
+	wget --progress=dot:mega $(cat ../urls.txt | tr '\n' ' ')
+	cat $(ls -X *) > data.7z
+    7z x data.7z
+    mkdir data
+    find . -name "*.jp2" | xargs -I FILE mv FILE ./data
+    rm *.7z.*
+    rm -r BDORTHO*
 fi
 
 ###### METADATA ######
 cd $WORK_DIR
-URL=$(head -n 1 download/urls.txt)
+URL=$(head -n 1 urls.txt)
 PRODUCT=$(echo $URL | grep -o '/[^/]*/file' | awk -F '/' '{print $2}')
 FORMAT=$(echo $PRODUCT | grep -o -e TIFF -e JP2-E100)
 PROJ=$(echo $PRODUCT | grep -o -e '_JP2-E100_[^_]*_'  -e '_TIFF_[^_]*_' | awk -F '_' '{print $3}')
@@ -63,9 +63,9 @@ wait
 
 bash scripts_be4/SCRIPT_FINISHER.sh
 
-create-layer.pl --pyr=pyramids/descriptors/BDORTHO-5M.pyr --tmsdir=./ --layerdir=pyramids/descriptors/
+create-layer.pl --pyr=pyramids/descriptors/BDORTHO-5M-${DEP}.pyr --tmsdir=./ --layerdir=pyramids/descriptors/
 
-sed -i "s#<pyramid.*#<pyramid>/rok4/config/pyramids/descriptors/BDORTHO-5M.pyr</pyramid>#g" pyramids/descriptors/BDORTHO-5M.lay
+sed -i "s#<pyramid.*#<pyramid>/rok4/config/pyramids/descriptors/BDORTHO-5M-${DEP}.pyr</pyramid>#g" pyramids/descriptors/BDORTHO-5M-${DEP}.lay
 
 ###### ARCHIVE ######
 cd $WORK_DIR/be4_work/pyramids
