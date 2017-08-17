@@ -1,13 +1,13 @@
 [ datasource ]
-filepath_conf = ./sources.txt
+filepath_conf = /DATA/be4_work/sources.txt
 
 [ pyramid ]
-pyr_data_path = ./pyramids/data
-pyr_desc_path = ./pyramids/descriptors
+pyr_data_path = /DATA/be4_work/pyramids/data
+pyr_desc_path = /DATA/be4_work/pyramids/descriptors
 pyr_name_new  = BDORTHO-5M-$DEP
 
 ; informations sur le TMS
-tms_path = ./
+tms_path = /DATA/be4_work/
 tms_name = PM.tms
 
 dir_depth = 2
@@ -28,7 +28,7 @@ color               = 200,200,255
 
 [ process ]
 
-path_shell = ./scripts_be4
-path_temp = ./temp_be4
-path_temp_common = ./temp_be4
+path_shell = /DATA/be4_work/scripts_be4
+path_temp = /DATA/be4_work/temp_be4
+path_temp_common = /DATA/be4_work/temp_be4
 job_number = ${JOB_NUMBER}

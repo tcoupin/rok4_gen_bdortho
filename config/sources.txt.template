@@ -1,5 +1,5 @@
 
 [ 15 ]
 
-path_image = ../download/data/
+path_image = /DATA/download/data/
 srs = IGNF:${PROJ}
