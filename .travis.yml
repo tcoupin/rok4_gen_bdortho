@@ -18,21 +18,39 @@ install:
 
 jobs:
   include:
-    - stage: departement download
-      script: bash scripts/departement/download.sh 075
-    - script: bash scripts/departement/download.sh 093
-    - script: bash scripts/departement/download.sh 094
-    - script: bash scripts/departement/download.sh 092
-    - stage: departement prepare
-      script: bash scripts/departement/prepare.sh 075
-    - script: bash scripts/departement/prepare.sh 093
-    - script: bash scripts/departement/prepare.sh 094
-    - script: bash scripts/departement/prepare.sh 092
-    - stage: departement archive
-      script: bash scripts/departement/generate.sh 075
-    - script: bash scripts/departement/generate.sh 093
-    - script: bash scripts/departement/generate.sh 094
-    - script: bash scripts/departement/generate.sh 092
+    - &download
+      stage: departement download
+      script: bash scripts/departement/download.sh $DEP
+      env: DEP=075
+    - <<: *download
+      env: DEP=093
+    - <<: *download
+      env: DEP=094
+    - <<: *download
+      env: DEP=092
+    - &prepare
+      stage: departement prepare
+      script: 
+        - find .
+        - bash scripts/departement/prepare.sh $DEP
+      env: DEP=075
+    - <<: *prepare
+      env: DEP=093
+    - <<: *prepare
+      env: DEP=094
+    - <<: *prepare
+      env: DEP=092
+    - &generate
+      stage: departement generate
+      script: bash scripts/departement/generate.sh $DEP
+      env: DEP=075
+    - <<: *generate
+      env: DEP=093
+    - <<: *generate
+      env: DEP=094
+    - <<: *generate
+      env: DEP=092
+      
     
 #001
 #002
