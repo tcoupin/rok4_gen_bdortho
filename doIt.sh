@@ -53,22 +53,20 @@ cp ../PM.tms .
 
 
 ###### GENERATE ######
-docker run -v $WORK_DIR:/DATA -it --rm -d --name be4 tcoupin/rok4:be4 bash
-ls -al
-docker exec -u $UID be4 ls -al
-docker exec -u $UID be4 pwd
-docker exec -u $UID be4 be4.pl --conf=/DATA/be4_work/prop.txt --env=/DATA/be4_work/env.txt
+docker run -v $WORK_DIR:$WORK_DIR -it --rm -d --name be4 -w $WORK_DIR/be4_work tcoupin/rok4:be4 bash
+
+docker exec -u $UID be4 be4.pl --conf=prop.txt --env=env.txt
 
 for i in `seq 1 $JOB_NUMBER`
 do
-	docker exec -u $UID be4 bash /DATA/be4_work/scripts_be4/SCRIPT_${i}.sh &
+	docker exec -u $UID be4 bash scripts_be4/SCRIPT_${i}.sh &
 done
 
 wait
 
-docker exec -u $UID be4 bash /DATA/be4_work/scripts_be4/SCRIPT_FINISHER.sh
+docker exec -u $UID be4 bash scripts_be4/SCRIPT_FINISHER.sh
 
-docker exec -u $UID be4 create-layer.pl --pyr=/DATA/be4_work/pyramids/descriptors/BDORTHO-5M-${DEP}.pyr --tmsdir=/DATA/be4_work --layerdir=/DATA/be4_work/pyramids/descriptors/
+docker exec -u $UID be4 create-layer.pl --pyr=pyramids/descriptors/BDORTHO-5M-${DEP}.pyr --tmsdir=./ --layerdir=pyramids/descriptors/
 
 docker kill be4
 sed -i "s#<pyramid.*#<pyramid>/rok4/config/pyramids/descriptors/BDORTHO-5M-${DEP}.pyr</pyramid>#g" pyramids/descriptors/BDORTHO-5M-${DEP}.lay
