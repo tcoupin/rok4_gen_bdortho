@@ -10,18 +10,22 @@ fi
 
 echo "Download departement $DEP"
 
-if [ -d workspace/$DEP/download ]
+if [ ! -d workspace/$DEP/download ]
 then
-	rm -r workspace/$DEP/download
+	mkdir -p workspace/$DEP/download/raw
 fi
-mkdir -p workspace/$DEP/download
+if [ -d workspace/$DEP/download/data ]
+then
+	rm -r workspace/$DEP/download/data
+fi
 	
-
 cd workspace/$DEP/download
-curl -s "http://pro.ign.fr/bdortho-5m" | grep -o "https://wxs-tele[^\"]*" | grep BDORTHO | grep "D$DEP" > ../urls.txt
-sed -i "s/https/http/g" ../urls.txt
-wget --progress=dot:mega $(cat ../urls.txt | tr '\n' ' ')
-cat $(ls -X *.7z *.7z*.) > data.7z
+curl -s "http://pro.ign.fr/bdortho-5m" | grep -o "https://wxs-tele[^\"]*" | grep BDORTHO | grep "D$DEP" > urls.txt
+sed -i "s/https/http/g" urls.txt
+cd raw
+wget -N --progress=dot:mega $(cat ../urls.txt | tr '\n' ' ')
+cd ..
+cat $(ls -X raw/*.7z*) > data.7z
 7z x data.7z
 mkdir data
 find . -name "*.jp2" | xargs -I FILE mv FILE ./data

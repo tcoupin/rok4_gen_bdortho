@@ -8,7 +8,7 @@ then
 	exit 1
 fi
 
-URL=$(head -n 1 workspace/$DEP/urls.txt)
+URL=$(head -n 1 workspace/$DEP/download/urls.txt)
 PRODUCT=$(echo $URL | grep -o '/[^/]*/file' | awk -F '/' '{print $2}')
 FORMAT=$(echo $PRODUCT | grep -o -e TIFF -e JP2-E100)
 PROJ=$(echo $PRODUCT | grep -o -e '_JP2-E100_[^_]*_'  -e '_TIFF_[^_]*_' | awk -F '_' '{print $3}')
