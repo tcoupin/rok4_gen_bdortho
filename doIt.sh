@@ -54,6 +54,7 @@ cp ../PM.tms .
 
 ###### GENERATE ######
 docker run -v $WORK_DIR:/DATA -it --rm -d --name be4 tcoupin/rok4:be4 bash
+docker inspect be4
 docker exec -u 1000 be4 be4.pl --conf=/DATA/be4_work/prop.txt --env=/DATA/be4_work/env.txt
 
 for i in `seq 1 $JOB_NUMBER`
