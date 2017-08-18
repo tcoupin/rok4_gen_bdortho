@@ -3,12 +3,15 @@ language: bash
 sudo: required
 dist: trusty
 
+cache:
+  directories:
+    - workspace
+
 
 branches:
   only:
     - /^\d+.*$/
 
-env:
 
 install:
   - sudo apt-get update && sudo apt-get install -y p7zip-full
@@ -127,7 +130,7 @@ deploy:
   provider: releases
   api_key: $GH_TOKEN
   file_glob: true
-  file: D*.tar.gz
+  file: workspace/**/D*.tar.gz
   skip_cleanup: true
   on:
     repo: tcoupin/rok4_gen_bdortho
