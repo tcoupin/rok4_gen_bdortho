@@ -10,7 +10,7 @@ fi
 
 echo "Download departement $DEP"
 
-if [ ! -d workspace/$DEP/download ]
+if [ ! -d workspace/$DEP/download/raw ]
 then
 	mkdir -p workspace/$DEP/download/raw
 fi
