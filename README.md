@@ -7,9 +7,8 @@ Env var :
 ### Example
 
 ```
-export DEP=75
-bash doIt.sh
+bash makeDep.sh 75
 docker run -it -p 80:80 --rm -v $PWD/be4_work/pyramids:/rok4/config/pyramids rok4/rok4:latest
 ```
 
-And open [http://127.0.0.1/rok4?service=WMS&request=GetMap&layers=BDORTHO-5M-075&styles&bbox=240000,6221000,290000,6270000&crs=EPSG:3857&format=image/jpeg&version=1.3.0&width=1024&height=1024] in browser.
+And open http://127.0.0.1/rok4?service=WMS&request=GetMap&layers=BDORTHO-5M-075&styles&bbox=240000,6221000,290000,6270000&crs=EPSG:3857&format=image/jpeg&version=1.3.0&width=1024&height=1024 in browser.

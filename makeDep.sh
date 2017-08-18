@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DEP=$(echo $DEP | tr '[:lower:]' '[:upper:]' | sed "s/^/000/" | grep -o '...$')
+DEP=$(echo $1 | tr '[:lower:]' '[:upper:]' | sed "s/^/000/" | grep -o '...$')
 
 if [[ "$DEP" == "000" ]]
 then
-	echo "Please set DEP env var"
+	echo "Please provide a departement"
 	exit 1
 fi
 
@@ -72,6 +72,8 @@ docker kill be4
 sed -i "s#<pyramid.*#<pyramid>/rok4/config/pyramids/descriptors/BDORTHO-5M-${DEP}.pyr</pyramid>#g" pyramids/descriptors/BDORTHO-5M-${DEP}.lay
 
 ###### ARCHIVE ######
-cd $WORK_DIR/be4_work/pyramids
+mv $WORK_DIR/be4_work/pyramids $WORK_DIR/be4_work/BDORTHO-5M-${DEP}
+cd $WORK_DIR/be4_work/
 
-tar -zcvf ../../D$DEP-alone.tar.gz *
+tar -zcvf ../D$DEP-alone.tar.gz *
+
