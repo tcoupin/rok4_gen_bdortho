@@ -31,7 +31,7 @@ jobs:
     - &prepare
       stage: departement prepare
       script: 
-        - find .
+        - chmod -R 777 workspace
         - bash scripts/departement/prepare.sh $DEP
       env: DEP=075
     - <<: *prepare
@@ -42,7 +42,9 @@ jobs:
       env: DEP=092
     - &generate
       stage: departement generate
-      script: bash scripts/departement/generate.sh $DEP
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/departement/generate.sh $DEP
       env: DEP=075
     - <<: *generate
       env: DEP=093
