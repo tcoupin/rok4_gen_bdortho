@@ -55,7 +55,18 @@ jobs:
       env: DEP=094
     - <<: *generate
       env: DEP=092
-      
+    - &docker
+      stage: departement docker
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/departement/docker.sh $DEP
+      env: DEP=075
+    - <<: *docker
+      env: DEP=093
+    - <<: *docker
+      env: DEP=094
+    - <<: *docker
+      env: DEP=092
     
 #001
 #002
