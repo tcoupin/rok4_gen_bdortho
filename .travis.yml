@@ -20,7 +20,9 @@ jobs:
   include:
     - &download
       stage: departement download
-      script: bash scripts/departement/download.sh $DEP
+      script: 
+        - find workspace
+        - bash scripts/departement/download.sh $DEP
       env: DEP=075
     - <<: *download
       env: DEP=093
@@ -32,6 +34,7 @@ jobs:
       stage: departement prepare
       script: 
         - chmod -R 777 workspace
+        - find workspace
         - bash scripts/departement/prepare.sh $DEP
       env: DEP=075
     - <<: *prepare
