@@ -90,6 +90,7 @@ cat >> .travis.yml << EOF
         file_glob: true
         file: workspace/**/*.tar.gz
         skip_cleanup: true
+        overwrite: true
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true
@@ -149,6 +150,7 @@ cat >> .travis.yml << EOF
         file_glob: true
         file: workspace/**/*.tar.gz
         skip_cleanup: true
+        overwrite: true
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true

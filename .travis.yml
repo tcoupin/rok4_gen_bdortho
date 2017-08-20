@@ -21,77 +21,887 @@ jobs:
     - &download
       stage: departement download
       script: bash scripts/departement/download.sh $DEP
+      env: DEP=001
+    - <<: *download
+      env: DEP=002
+    - <<: *download
+      env: DEP=003
+    - <<: *download
+      env: DEP=004
+    - <<: *download
+      env: DEP=005
+    - <<: *download
+      env: DEP=006
+    - <<: *download
+      env: DEP=007
+    - <<: *download
+      env: DEP=008
+    - <<: *download
+      env: DEP=009
+    - <<: *download
+      env: DEP=010
+    - <<: *download
+      env: DEP=011
+    - <<: *download
+      env: DEP=012
+    - <<: *download
+      env: DEP=013
+    - <<: *download
+      env: DEP=014
+    - <<: *download
+      env: DEP=015
+    - <<: *download
+      env: DEP=016
+    - <<: *download
+      env: DEP=017
+    - <<: *download
+      env: DEP=018
+    - <<: *download
+      env: DEP=019
+    - <<: *download
+      env: DEP=021
+    - <<: *download
+      env: DEP=022
+    - <<: *download
+      env: DEP=023
+    - <<: *download
+      env: DEP=024
+    - <<: *download
+      env: DEP=025
+    - <<: *download
+      env: DEP=026
+    - <<: *download
+      env: DEP=027
+    - <<: *download
+      env: DEP=028
+    - <<: *download
+      env: DEP=029
+    - <<: *download
+      env: DEP=02A
+    - <<: *download
+      env: DEP=02B
+    - <<: *download
+      env: DEP=030
+    - <<: *download
+      env: DEP=031
+    - <<: *download
+      env: DEP=032
+    - <<: *download
+      env: DEP=033
+    - <<: *download
+      env: DEP=034
+    - <<: *download
+      env: DEP=035
+    - <<: *download
+      env: DEP=036
+    - <<: *download
+      env: DEP=037
+    - <<: *download
+      env: DEP=038
+    - <<: *download
+      env: DEP=039
+    - <<: *download
+      env: DEP=040
+    - <<: *download
+      env: DEP=041
+    - <<: *download
+      env: DEP=042
+    - <<: *download
+      env: DEP=043
+    - <<: *download
+      env: DEP=044
+    - <<: *download
+      env: DEP=045
+    - <<: *download
+      env: DEP=046
+    - <<: *download
+      env: DEP=047
+    - <<: *download
+      env: DEP=048
+    - <<: *download
+      env: DEP=049
+    - <<: *download
+      env: DEP=050
+    - <<: *download
+      env: DEP=051
+    - <<: *download
+      env: DEP=052
+    - <<: *download
+      env: DEP=053
+    - <<: *download
+      env: DEP=054
+    - <<: *download
+      env: DEP=055
+    - <<: *download
+      env: DEP=056
+    - <<: *download
+      env: DEP=057
+    - <<: *download
+      env: DEP=058
+    - <<: *download
+      env: DEP=059
+    - <<: *download
+      env: DEP=060
+    - <<: *download
+      env: DEP=061
+    - <<: *download
+      env: DEP=062
+    - <<: *download
+      env: DEP=063
+    - <<: *download
+      env: DEP=064
+    - <<: *download
+      env: DEP=065
+    - <<: *download
+      env: DEP=066
+    - <<: *download
+      env: DEP=067
+    - <<: *download
+      env: DEP=068
+    - <<: *download
+      env: DEP=069
+    - <<: *download
+      env: DEP=070
+    - <<: *download
+      env: DEP=071
+    - <<: *download
+      env: DEP=072
+    - <<: *download
+      env: DEP=073
+    - <<: *download
+      env: DEP=074
+    - <<: *download
       env: DEP=075
+    - <<: *download
+      env: DEP=076
+    - <<: *download
+      env: DEP=077
+    - <<: *download
+      env: DEP=078
+    - <<: *download
+      env: DEP=079
+    - <<: *download
+      env: DEP=080
+    - <<: *download
+      env: DEP=081
+    - <<: *download
+      env: DEP=082
+    - <<: *download
+      env: DEP=083
+    - <<: *download
+      env: DEP=084
+    - <<: *download
+      env: DEP=085
+    - <<: *download
+      env: DEP=086
+    - <<: *download
+      env: DEP=087
+    - <<: *download
+      env: DEP=088
+    - <<: *download
+      env: DEP=089
+    - <<: *download
+      env: DEP=090
+    - <<: *download
+      env: DEP=091
+    - <<: *download
+      env: DEP=092
     - <<: *download
       env: DEP=093
     - <<: *download
       env: DEP=094
     - <<: *download
-      env: DEP=092
+      env: DEP=095
+    - <<: *download
+      env: DEP=971
+    - <<: *download
+      env: DEP=972
+    - <<: *download
+      env: DEP=973
+    - <<: *download
+      env: DEP=974
+    - <<: *download
+      env: DEP=975
+    - <<: *download
+      env: DEP=976
+    - <<: *download
+      env: DEP=977
+    - <<: *download
+      env: DEP=978
+    - <<: *download
+      env: DEP=986
     - &prepare
       stage: departement prepare
       script: 
         - chmod -R 777 workspace
         - bash scripts/departement/prepare.sh $DEP
+      env: DEP=001
+    - <<: *prepare
+      env: DEP=002
+    - <<: *prepare
+      env: DEP=003
+    - <<: *prepare
+      env: DEP=004
+    - <<: *prepare
+      env: DEP=005
+    - <<: *prepare
+      env: DEP=006
+    - <<: *prepare
+      env: DEP=007
+    - <<: *prepare
+      env: DEP=008
+    - <<: *prepare
+      env: DEP=009
+    - <<: *prepare
+      env: DEP=010
+    - <<: *prepare
+      env: DEP=011
+    - <<: *prepare
+      env: DEP=012
+    - <<: *prepare
+      env: DEP=013
+    - <<: *prepare
+      env: DEP=014
+    - <<: *prepare
+      env: DEP=015
+    - <<: *prepare
+      env: DEP=016
+    - <<: *prepare
+      env: DEP=017
+    - <<: *prepare
+      env: DEP=018
+    - <<: *prepare
+      env: DEP=019
+    - <<: *prepare
+      env: DEP=021
+    - <<: *prepare
+      env: DEP=022
+    - <<: *prepare
+      env: DEP=023
+    - <<: *prepare
+      env: DEP=024
+    - <<: *prepare
+      env: DEP=025
+    - <<: *prepare
+      env: DEP=026
+    - <<: *prepare
+      env: DEP=027
+    - <<: *prepare
+      env: DEP=028
+    - <<: *prepare
+      env: DEP=029
+    - <<: *prepare
+      env: DEP=02A
+    - <<: *prepare
+      env: DEP=02B
+    - <<: *prepare
+      env: DEP=030
+    - <<: *prepare
+      env: DEP=031
+    - <<: *prepare
+      env: DEP=032
+    - <<: *prepare
+      env: DEP=033
+    - <<: *prepare
+      env: DEP=034
+    - <<: *prepare
+      env: DEP=035
+    - <<: *prepare
+      env: DEP=036
+    - <<: *prepare
+      env: DEP=037
+    - <<: *prepare
+      env: DEP=038
+    - <<: *prepare
+      env: DEP=039
+    - <<: *prepare
+      env: DEP=040
+    - <<: *prepare
+      env: DEP=041
+    - <<: *prepare
+      env: DEP=042
+    - <<: *prepare
+      env: DEP=043
+    - <<: *prepare
+      env: DEP=044
+    - <<: *prepare
+      env: DEP=045
+    - <<: *prepare
+      env: DEP=046
+    - <<: *prepare
+      env: DEP=047
+    - <<: *prepare
+      env: DEP=048
+    - <<: *prepare
+      env: DEP=049
+    - <<: *prepare
+      env: DEP=050
+    - <<: *prepare
+      env: DEP=051
+    - <<: *prepare
+      env: DEP=052
+    - <<: *prepare
+      env: DEP=053
+    - <<: *prepare
+      env: DEP=054
+    - <<: *prepare
+      env: DEP=055
+    - <<: *prepare
+      env: DEP=056
+    - <<: *prepare
+      env: DEP=057
+    - <<: *prepare
+      env: DEP=058
+    - <<: *prepare
+      env: DEP=059
+    - <<: *prepare
+      env: DEP=060
+    - <<: *prepare
+      env: DEP=061
+    - <<: *prepare
+      env: DEP=062
+    - <<: *prepare
+      env: DEP=063
+    - <<: *prepare
+      env: DEP=064
+    - <<: *prepare
+      env: DEP=065
+    - <<: *prepare
+      env: DEP=066
+    - <<: *prepare
+      env: DEP=067
+    - <<: *prepare
+      env: DEP=068
+    - <<: *prepare
+      env: DEP=069
+    - <<: *prepare
+      env: DEP=070
+    - <<: *prepare
+      env: DEP=071
+    - <<: *prepare
+      env: DEP=072
+    - <<: *prepare
+      env: DEP=073
+    - <<: *prepare
+      env: DEP=074
+    - <<: *prepare
       env: DEP=075
+    - <<: *prepare
+      env: DEP=076
+    - <<: *prepare
+      env: DEP=077
+    - <<: *prepare
+      env: DEP=078
+    - <<: *prepare
+      env: DEP=079
+    - <<: *prepare
+      env: DEP=080
+    - <<: *prepare
+      env: DEP=081
+    - <<: *prepare
+      env: DEP=082
+    - <<: *prepare
+      env: DEP=083
+    - <<: *prepare
+      env: DEP=084
+    - <<: *prepare
+      env: DEP=085
+    - <<: *prepare
+      env: DEP=086
+    - <<: *prepare
+      env: DEP=087
+    - <<: *prepare
+      env: DEP=088
+    - <<: *prepare
+      env: DEP=089
+    - <<: *prepare
+      env: DEP=090
+    - <<: *prepare
+      env: DEP=091
+    - <<: *prepare
+      env: DEP=092
     - <<: *prepare
       env: DEP=093
     - <<: *prepare
       env: DEP=094
     - <<: *prepare
-      env: DEP=092
+      env: DEP=095
+    - <<: *prepare
+      env: DEP=971
+    - <<: *prepare
+      env: DEP=972
+    - <<: *prepare
+      env: DEP=973
+    - <<: *prepare
+      env: DEP=974
+    - <<: *prepare
+      env: DEP=975
+    - <<: *prepare
+      env: DEP=976
+    - <<: *prepare
+      env: DEP=977
+    - <<: *prepare
+      env: DEP=978
+    - <<: *prepare
+      env: DEP=986
     - &generate
       stage: departement generate
       script: 
         - chmod -R 777 workspace
         - bash scripts/departement/generate.sh $DEP
-      env: DEP=075
+      env: DEP=001
       deploy:
         provider: releases
         api_key: $GH_TOKEN
         file_glob: true
         file: workspace/**/*.tar.gz
         skip_cleanup: true
+        overwrite: true
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true
+    - <<: *generate
+      env: DEP=002
+    - <<: *generate
+      env: DEP=003
+    - <<: *generate
+      env: DEP=004
+    - <<: *generate
+      env: DEP=005
+    - <<: *generate
+      env: DEP=006
+    - <<: *generate
+      env: DEP=007
+    - <<: *generate
+      env: DEP=008
+    - <<: *generate
+      env: DEP=009
+    - <<: *generate
+      env: DEP=010
+    - <<: *generate
+      env: DEP=011
+    - <<: *generate
+      env: DEP=012
+    - <<: *generate
+      env: DEP=013
+    - <<: *generate
+      env: DEP=014
+    - <<: *generate
+      env: DEP=015
+    - <<: *generate
+      env: DEP=016
+    - <<: *generate
+      env: DEP=017
+    - <<: *generate
+      env: DEP=018
+    - <<: *generate
+      env: DEP=019
+    - <<: *generate
+      env: DEP=021
+    - <<: *generate
+      env: DEP=022
+    - <<: *generate
+      env: DEP=023
+    - <<: *generate
+      env: DEP=024
+    - <<: *generate
+      env: DEP=025
+    - <<: *generate
+      env: DEP=026
+    - <<: *generate
+      env: DEP=027
+    - <<: *generate
+      env: DEP=028
+    - <<: *generate
+      env: DEP=029
+    - <<: *generate
+      env: DEP=02A
+    - <<: *generate
+      env: DEP=02B
+    - <<: *generate
+      env: DEP=030
+    - <<: *generate
+      env: DEP=031
+    - <<: *generate
+      env: DEP=032
+    - <<: *generate
+      env: DEP=033
+    - <<: *generate
+      env: DEP=034
+    - <<: *generate
+      env: DEP=035
+    - <<: *generate
+      env: DEP=036
+    - <<: *generate
+      env: DEP=037
+    - <<: *generate
+      env: DEP=038
+    - <<: *generate
+      env: DEP=039
+    - <<: *generate
+      env: DEP=040
+    - <<: *generate
+      env: DEP=041
+    - <<: *generate
+      env: DEP=042
+    - <<: *generate
+      env: DEP=043
+    - <<: *generate
+      env: DEP=044
+    - <<: *generate
+      env: DEP=045
+    - <<: *generate
+      env: DEP=046
+    - <<: *generate
+      env: DEP=047
+    - <<: *generate
+      env: DEP=048
+    - <<: *generate
+      env: DEP=049
+    - <<: *generate
+      env: DEP=050
+    - <<: *generate
+      env: DEP=051
+    - <<: *generate
+      env: DEP=052
+    - <<: *generate
+      env: DEP=053
+    - <<: *generate
+      env: DEP=054
+    - <<: *generate
+      env: DEP=055
+    - <<: *generate
+      env: DEP=056
+    - <<: *generate
+      env: DEP=057
+    - <<: *generate
+      env: DEP=058
+    - <<: *generate
+      env: DEP=059
+    - <<: *generate
+      env: DEP=060
+    - <<: *generate
+      env: DEP=061
+    - <<: *generate
+      env: DEP=062
+    - <<: *generate
+      env: DEP=063
+    - <<: *generate
+      env: DEP=064
+    - <<: *generate
+      env: DEP=065
+    - <<: *generate
+      env: DEP=066
+    - <<: *generate
+      env: DEP=067
+    - <<: *generate
+      env: DEP=068
+    - <<: *generate
+      env: DEP=069
+    - <<: *generate
+      env: DEP=070
+    - <<: *generate
+      env: DEP=071
+    - <<: *generate
+      env: DEP=072
+    - <<: *generate
+      env: DEP=073
+    - <<: *generate
+      env: DEP=074
+    - <<: *generate
+      env: DEP=075
+    - <<: *generate
+      env: DEP=076
+    - <<: *generate
+      env: DEP=077
+    - <<: *generate
+      env: DEP=078
+    - <<: *generate
+      env: DEP=079
+    - <<: *generate
+      env: DEP=080
+    - <<: *generate
+      env: DEP=081
+    - <<: *generate
+      env: DEP=082
+    - <<: *generate
+      env: DEP=083
+    - <<: *generate
+      env: DEP=084
+    - <<: *generate
+      env: DEP=085
+    - <<: *generate
+      env: DEP=086
+    - <<: *generate
+      env: DEP=087
+    - <<: *generate
+      env: DEP=088
+    - <<: *generate
+      env: DEP=089
+    - <<: *generate
+      env: DEP=090
+    - <<: *generate
+      env: DEP=091
+    - <<: *generate
+      env: DEP=092
     - <<: *generate
       env: DEP=093
     - <<: *generate
       env: DEP=094
     - <<: *generate
-      env: DEP=092
+      env: DEP=095
+    - <<: *generate
+      env: DEP=971
+    - <<: *generate
+      env: DEP=972
+    - <<: *generate
+      env: DEP=973
+    - <<: *generate
+      env: DEP=974
+    - <<: *generate
+      env: DEP=975
+    - <<: *generate
+      env: DEP=976
+    - <<: *generate
+      env: DEP=977
+    - <<: *generate
+      env: DEP=978
+    - <<: *generate
+      env: DEP=986
     - &docker
       stage: departement docker
       script: 
         - chmod -R 777 workspace
         - bash scripts/departement/docker-image.sh $DEP
+      env: DEP=001
+    - <<: *docker
+      env: DEP=002
+    - <<: *docker
+      env: DEP=003
+    - <<: *docker
+      env: DEP=004
+    - <<: *docker
+      env: DEP=005
+    - <<: *docker
+      env: DEP=006
+    - <<: *docker
+      env: DEP=007
+    - <<: *docker
+      env: DEP=008
+    - <<: *docker
+      env: DEP=009
+    - <<: *docker
+      env: DEP=010
+    - <<: *docker
+      env: DEP=011
+    - <<: *docker
+      env: DEP=012
+    - <<: *docker
+      env: DEP=013
+    - <<: *docker
+      env: DEP=014
+    - <<: *docker
+      env: DEP=015
+    - <<: *docker
+      env: DEP=016
+    - <<: *docker
+      env: DEP=017
+    - <<: *docker
+      env: DEP=018
+    - <<: *docker
+      env: DEP=019
+    - <<: *docker
+      env: DEP=021
+    - <<: *docker
+      env: DEP=022
+    - <<: *docker
+      env: DEP=023
+    - <<: *docker
+      env: DEP=024
+    - <<: *docker
+      env: DEP=025
+    - <<: *docker
+      env: DEP=026
+    - <<: *docker
+      env: DEP=027
+    - <<: *docker
+      env: DEP=028
+    - <<: *docker
+      env: DEP=029
+    - <<: *docker
+      env: DEP=02A
+    - <<: *docker
+      env: DEP=02B
+    - <<: *docker
+      env: DEP=030
+    - <<: *docker
+      env: DEP=031
+    - <<: *docker
+      env: DEP=032
+    - <<: *docker
+      env: DEP=033
+    - <<: *docker
+      env: DEP=034
+    - <<: *docker
+      env: DEP=035
+    - <<: *docker
+      env: DEP=036
+    - <<: *docker
+      env: DEP=037
+    - <<: *docker
+      env: DEP=038
+    - <<: *docker
+      env: DEP=039
+    - <<: *docker
+      env: DEP=040
+    - <<: *docker
+      env: DEP=041
+    - <<: *docker
+      env: DEP=042
+    - <<: *docker
+      env: DEP=043
+    - <<: *docker
+      env: DEP=044
+    - <<: *docker
+      env: DEP=045
+    - <<: *docker
+      env: DEP=046
+    - <<: *docker
+      env: DEP=047
+    - <<: *docker
+      env: DEP=048
+    - <<: *docker
+      env: DEP=049
+    - <<: *docker
+      env: DEP=050
+    - <<: *docker
+      env: DEP=051
+    - <<: *docker
+      env: DEP=052
+    - <<: *docker
+      env: DEP=053
+    - <<: *docker
+      env: DEP=054
+    - <<: *docker
+      env: DEP=055
+    - <<: *docker
+      env: DEP=056
+    - <<: *docker
+      env: DEP=057
+    - <<: *docker
+      env: DEP=058
+    - <<: *docker
+      env: DEP=059
+    - <<: *docker
+      env: DEP=060
+    - <<: *docker
+      env: DEP=061
+    - <<: *docker
+      env: DEP=062
+    - <<: *docker
+      env: DEP=063
+    - <<: *docker
+      env: DEP=064
+    - <<: *docker
+      env: DEP=065
+    - <<: *docker
+      env: DEP=066
+    - <<: *docker
+      env: DEP=067
+    - <<: *docker
+      env: DEP=068
+    - <<: *docker
+      env: DEP=069
+    - <<: *docker
+      env: DEP=070
+    - <<: *docker
+      env: DEP=071
+    - <<: *docker
+      env: DEP=072
+    - <<: *docker
+      env: DEP=073
+    - <<: *docker
+      env: DEP=074
+    - <<: *docker
       env: DEP=075
+    - <<: *docker
+      env: DEP=076
+    - <<: *docker
+      env: DEP=077
+    - <<: *docker
+      env: DEP=078
+    - <<: *docker
+      env: DEP=079
+    - <<: *docker
+      env: DEP=080
+    - <<: *docker
+      env: DEP=081
+    - <<: *docker
+      env: DEP=082
+    - <<: *docker
+      env: DEP=083
+    - <<: *docker
+      env: DEP=084
+    - <<: *docker
+      env: DEP=085
+    - <<: *docker
+      env: DEP=086
+    - <<: *docker
+      env: DEP=087
+    - <<: *docker
+      env: DEP=088
+    - <<: *docker
+      env: DEP=089
+    - <<: *docker
+      env: DEP=090
+    - <<: *docker
+      env: DEP=091
+    - <<: *docker
+      env: DEP=092
     - <<: *docker
       env: DEP=093
     - <<: *docker
       env: DEP=094
     - <<: *docker
-      env: DEP=092
+      env: DEP=095
+    - <<: *docker
+      env: DEP=971
+    - <<: *docker
+      env: DEP=972
+    - <<: *docker
+      env: DEP=973
+    - <<: *docker
+      env: DEP=974
+    - <<: *docker
+      env: DEP=975
+    - <<: *docker
+      env: DEP=976
+    - <<: *docker
+      env: DEP=977
+    - <<: *docker
+      env: DEP=978
+    - <<: *docker
+      env: DEP=986
     - stage: world download
       script: bash scripts/world/download.sh $DEPS
-      env: DEPS="75,93,94,92"
+      env: DEPS="001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986"
     - stage: world prepare
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/prepare.sh $DEPS
-      env: DEPS="75,93,94,92"
+      env: DEPS="001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986"
     - stage: world generate
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/generate.sh
-      env: DEPS="75,93,94,92"
+      env: DEPS="001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986"
       deploy:
         provider: releases
         api_key: $GH_TOKEN
         file_glob: true
         file: workspace/**/*.tar.gz
         skip_cleanup: true
+        overwrite: true
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true
@@ -99,5 +909,5 @@ jobs:
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/docker-image.sh 
-      env: DEPS="75,93,94,92"
+      env: DEPS="001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986"
 

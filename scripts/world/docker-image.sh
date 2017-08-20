@@ -4,6 +4,7 @@ cp docker/Dockerfile workspace/world/be4_work/
 
 cd workspace/world/be4_work/
 if [ -z "$TRAVIS_TAG" ]
+then
 	TAG=world
 else
 	TAG=$TRAVIS_TAG

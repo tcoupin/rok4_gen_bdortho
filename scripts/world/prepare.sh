@@ -28,6 +28,7 @@ do
 	DEP=$(norm $DEP)
 	BBOX=$(grep bounding workspace/$DEP/be4_work/BDORTHO-5M-$DEP/descriptors/BDORTHO-5M-$DEP.lay | awk -F '"' '{print $4","$6","$8","$10}')
 	echo "D$DEP = $BBOX" >> workspace/world/be4_work/prop.txt
+	echo "D$DEP = $BBOX" >> workspace/world/be4_work/pyramids/descriptors/bbox.txt
 done
 
 echo "[ composition ]" >> workspace/world/be4_work/prop.txt
