@@ -17,7 +17,7 @@ fi
 
 IFS=',' read -r -a DEP <<< "$@"
 
-FIRST_DEP=${DEP[0]}
+FIRST_DEP=$( norm ${DEP[0]} )
 DEP=("${DEP[@]:1}")
 
 ### BEGIN

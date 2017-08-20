@@ -21,7 +21,7 @@ jobs:
     - &download
       stage: departement download
       script: bash scripts/departement/download.sh $DEP
-      env: DEP=75
+      env: DEP=075
     - <<: *download
       env: DEP=093
     - <<: *download
@@ -33,7 +33,7 @@ jobs:
       script: 
         - chmod -R 777 workspace
         - bash scripts/departement/prepare.sh $DEP
-      env: DEP=75
+      env: DEP=075
     - <<: *prepare
       env: DEP=093
     - <<: *prepare
@@ -45,7 +45,7 @@ jobs:
       script: 
         - chmod -R 777 workspace
         - bash scripts/departement/generate.sh $DEP
-      env: DEP=75
+      env: DEP=075
       deploy:
         provider: releases
         api_key: $GH_TOKEN
@@ -66,7 +66,7 @@ jobs:
       script: 
         - chmod -R 777 workspace
         - bash scripts/departement/docker-image.sh $DEP
-      env: DEP=75
+      env: DEP=075
     - <<: *docker
       env: DEP=093
     - <<: *docker
