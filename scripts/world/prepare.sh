@@ -43,3 +43,5 @@ done
 
 docker run -it -v $PWD:$PWD -u $UID --rm -w $PWD/workspace/world/be4_work tcoupin/rok4:be4 joinCache.pl --conf=prop.txt
 
+# echo on command to avoid timeout on travis
+sed -i "s/^\([a-zA-Z0-9]*\) () {/\1 () {\necho \"\1\: \$(date)\";/g" workspace/world/be4_work/scripts_be4/SCRIPT_*

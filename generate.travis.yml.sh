@@ -92,7 +92,6 @@ cat >> .travis.yml << EOF
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true
-          env: DEPS=$DEPS
 EOF
 for dep in $*
 do
@@ -124,7 +123,7 @@ done
 cat >> .travis.yml << EOF
     - stage: world download
       script: bash scripts/world/download.sh \$DEPS
-      env: DEPS=$DEPS
+      env: DEPS="$DEPS"
 EOF
 
 ###### PREPARE WORLD
@@ -133,7 +132,7 @@ cat >> .travis.yml << EOF
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/prepare.sh \$DEPS
-      env: DEPS=$DEPS
+      env: DEPS="$DEPS"
 EOF
 
 ###### GENERATE WORLD
@@ -142,7 +141,7 @@ cat >> .travis.yml << EOF
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/generate.sh \$DEPS
-      env: DEPS=$DEPS
+      env: DEPS="$DEPS"
       deploy:
         provider: releases
         api_key: \$GH_TOKEN
@@ -152,7 +151,6 @@ cat >> .travis.yml << EOF
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true
-          env: DEPS=$DEPS
 EOF
 
 ###### DOCKER WORLD

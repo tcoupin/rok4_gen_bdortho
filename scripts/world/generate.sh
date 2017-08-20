@@ -1,18 +1,5 @@
 #!/bin/bash
 
-function norm () {
-	echo $1 | tr '[:lower:]' '[:upper:]' | sed "s/^/000/" | grep -o '...$'
-}
-
-DEPS=$@
-
-
-if [[ "$DEPS" == "" ]]
-then
-	echo "Please provide a list of departements, space delimited"
-	exit 1
-fi
-
 JOB_NUMBER=$(lscpu | grep "^CPU(s):" | awk '{print $2}')
 
 docker run -v $PWD:$PWD -it --rm -d --name be4 -w $PWD/workspace/world/be4_work tcoupin/rok4:be4 bash
@@ -33,4 +20,4 @@ sed -i "s#<pyramid.*#<pyramid>/rok4/config/pyramids/BDORTHO-5M/descriptors/BDORT
 mv $PWD/workspace/world/be4_work/pyramids $PWD/workspace/world/be4_work/BDORTHO-5M
 cd $PWD/workspace/world/be4_work/
 
-tar -zcvf ../world.tar.gz BDORTHO-5M
+tar -zcvhf ../world.tar.gz BDORTHO-5M

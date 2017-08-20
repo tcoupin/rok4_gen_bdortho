@@ -55,7 +55,6 @@ jobs:
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true
-          env: DEPS=75 93 94 92
     - <<: *generate
       env: DEP=093
     - <<: *generate
@@ -76,17 +75,17 @@ jobs:
       env: DEP=092
     - stage: world download
       script: bash scripts/world/download.sh $DEPS
-      env: DEPS=75 93 94 92
+      env: DEPS="75 93 94 92"
     - stage: world prepare
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/prepare.sh $DEPS
-      env: DEPS=75 93 94 92
+      env: DEPS="75 93 94 92"
     - stage: world generate
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/generate.sh $DEPS
-      env: DEPS=75 93 94 92
+      env: DEPS="75 93 94 92"
       deploy:
         provider: releases
         api_key: $GH_TOKEN
@@ -96,7 +95,6 @@ jobs:
         on:
           repo: tcoupin/rok4_gen_bdortho
           tags: true
-          env: DEPS=75 93 94 92
     - stage: world docker
       script: 
         - chmod -R 777 workspace
