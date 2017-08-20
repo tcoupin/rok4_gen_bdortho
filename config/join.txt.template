@@ -1,10 +1,10 @@
-[ datasource ]
-filepath_conf = ./sources.txt
+[ logger ]
+log_level = INFO
 
 [ pyramid ]
 pyr_data_path = ./pyramids/data
 pyr_desc_path = ./pyramids/descriptors
-pyr_name_new  = BDORTHO-5M-$DEP
+pyr_name_new  = BDORTHO-5M
 
 ; informations sur le TMS
 tms_path = ./
@@ -16,20 +16,23 @@ dir_depth = 2
 image_width         = 16
 image_height        = 16
 
-; informations relatives aux images
+export_masks = TRUE
+
 compression         = jpg
 bitspersample       = 8
 sampleformat        = uint
 photometric         = rgb
 samplesperpixel     = 3
 interpolation       = bicubic
-export_masks		= true
 
 color               = 200,200,255
 
 [ process ]
-
-path_shell = ./scripts_be4
 path_temp = ./temp_be4
 path_temp_common = ./temp_be4
+path_shell = ./scripts_be4
 job_number = ${JOB_NUMBER}
+merge_method = top
+
+
+[ bboxes ]

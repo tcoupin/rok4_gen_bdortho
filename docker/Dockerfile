@@ -1,5 +1,4 @@
-FROM tianon/true
+FROM debian:jessie
 ARG FOLDER
-COPY $FOLDER /rok4/config/pyramids/$FOLDER/
-VOLUME /rok4/config/pyramids/$FOLDER
-ENTRYPOINT ["/true"]
+COPY $FOLDER/ /rok4/config/pyramids/$FOLDER/
+CMD /bin/true

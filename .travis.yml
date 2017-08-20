@@ -20,9 +20,7 @@ jobs:
   include:
     - &download
       stage: departement download
-      script: 
-        - find workspace
-        - bash scripts/departement/download.sh $DEP
+      script: bash scripts/departement/download.sh $DEP
       env: DEP=075
     - <<: *download
       env: DEP=093
@@ -34,7 +32,6 @@ jobs:
       stage: departement prepare
       script: 
         - chmod -R 777 workspace
-        - find workspace
         - bash scripts/departement/prepare.sh $DEP
       env: DEP=075
     - <<: *prepare
@@ -67,119 +64,30 @@ jobs:
       env: DEP=094
     - <<: *docker
       env: DEP=092
-    
-#001
-#002
-#003
-#004
-#005
-#006
-#007
-#008
-#009
-#010
-#011
-#012
-#013
-#014
-#015
-#016
-#017
-#018
-#019
-#021
-#022
-#023
-#024
-#025
-#026
-#027
-#028
-#029
-#02A
-#02B
-#030
-#031
-#032
-#033
-#034
-#035
-#036
-#037
-#038
-#039
-#040
-#041
-#042
-#043
-#044
-#045
-#046
-#047
-#048
-#049
-#050
-#051
-#052
-#053
-#054
-#055
-#056
-#057
-#058
-#059
-#060
-#061
-#062
-#063
-#064
-#065
-#066
-#067
-#068
-#069
-#070
-#071
-#072
-#073
-#074
-#075
-#076
-#077
-#078
-#079
-#080
-#081
-#082
-#083
-#084
-#085
-#086
-#087
-#088
-#089
-#090
-#091
-#092
-#093
-#094
-#095
-#971
-#972
-#973
-#974
-#975
-#976
-#977
-#978
-#986
-
+    - stage: world download
+      script: bash scripts/world/download.sh $DEPS
+      env: DEPS=75 93 94 92
+    - stage: world prepare
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/world/prepare.sh $DEPS
+      env: DEPS=75 93 94 92
+    - stage: world generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/world/generate.sh $DEPS
+      env: DEPS=75 93 94 92
+    - stage: world docker
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/world/docker-image.sh 
+      env: DEPS=75 93 94 92
 
 deploy:
   provider: releases
-  api_key: $GH_TOKEN
+  api_key: 
   file_glob: true
-  file: workspace/**/D*.tar.gz
+  file: workspace/**/*.tar.gz
   skip_cleanup: true
   on:
     repo: tcoupin/rok4_gen_bdortho
