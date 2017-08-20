@@ -20,7 +20,8 @@ then
 fi
 	
 cd workspace/$DEP/download
-curl -s "http://pro.ign.fr/bdortho-5m" | grep -o "https://wxs-tele[^\"]*" | grep BDORTHO | grep "D$DEP" > urls.txt
+#curl -s "http://pro.ign.fr/bdortho-5m" | grep -o "https://wxs-tele[^\"]*" | grep BDORTHO | grep "D$DEP" > urls.txt
+cat ../../../BDortho5M.list | grep BDORTHO | grep "D$DEP" > urls.txt
 sed -i "s/https/http/g" urls.txt
 cd raw
 wget -N --progress=dot:mega $(cat ../urls.txt | tr '\n' ' ')
