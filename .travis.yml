@@ -46,6 +46,16 @@ jobs:
         - chmod -R 777 workspace
         - bash scripts/departement/generate.sh $DEP
       env: DEP=075
+      deploy:
+        provider: releases
+        api_key: $GH_TOKEN
+        file_glob: true
+        file: workspace/**/*.tar.gz
+        skip_cleanup: true
+        on:
+          repo: tcoupin/rok4_gen_bdortho
+          tags: true
+          env: DEPS=75 93 94 92
     - <<: *generate
       env: DEP=093
     - <<: *generate
@@ -77,18 +87,18 @@ jobs:
         - chmod -R 777 workspace
         - bash scripts/world/generate.sh $DEPS
       env: DEPS=75 93 94 92
+      deploy:
+        provider: releases
+        api_key: $GH_TOKEN
+        file_glob: true
+        file: workspace/**/*.tar.gz
+        skip_cleanup: true
+        on:
+          repo: tcoupin/rok4_gen_bdortho
+          tags: true
+          env: DEPS=75 93 94 92
     - stage: world docker
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/docker-image.sh 
-      env: DEPS=75 93 94 92
 
-deploy:
-  provider: releases
-  api_key: 
-  file_glob: true
-  file: workspace/**/*.tar.gz
-  skip_cleanup: true
-  on:
-    repo: tcoupin/rok4_gen_bdortho
-    tags: true
