@@ -22,6 +22,6 @@ do
 	then
 		mkdir -p workspace/$DEP/be4_work
 	fi
-	docker run -i --rm -u $UID -v $PWD/workspace/$DEP/be4_work:/be4_work tcoupin/rok4-bdortho:$DEP-alone cp -ur /rok4/config/pyramids/BDORTHO-5M-$DEP /be4_work/
+	docker run --rm -u $UID -v $PWD/workspace/$DEP/be4_work:/be4_work tcoupin/rok4-bdortho:$DEP-alone cp -ur /rok4/config/pyramids/BDORTHO-5M-$DEP /be4_work/
 done
 
