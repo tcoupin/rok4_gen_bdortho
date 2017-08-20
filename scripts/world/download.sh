@@ -9,11 +9,11 @@ DEPS=$@
 
 if [[ "$DEPS" == "" ]]
 then
-	echo "Please provide a list of departements, space delimited"
+	echo "Please provide a list of departements, comma delimited"
 	exit 1
 fi
 
-echo $DEPS | tr ' ' '\n' | while read DEP
+echo $DEPS | tr ',' '\n' | while read DEP
 do
 	DEP=$(norm $DEP)
 	echo "Download departement $DEP"

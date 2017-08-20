@@ -10,7 +10,7 @@ DEPS=$@
 
 if [[ "$DEPS" == "" ]]
 then
-	echo "Please provide a list of departements, space delimited"
+	echo "Please provide a list of departements, comma delimited"
 	exit 1
 fi
 
@@ -23,7 +23,7 @@ mkdir -p workspace/world/be4_work
 cp config/PM.tms workspace/world/be4_work
 eval "echo \"$(cat config/join.txt.template)\"" > workspace/world/be4_work/prop.txt
 
-echo $DEPS | tr ' ' '\n' | while read DEP
+echo $DEPS | tr ',' '\n' | while read DEP
 do
 	DEP=$(norm $DEP)
 	BBOX=$(grep bounding workspace/$DEP/be4_work/BDORTHO-5M-$DEP/descriptors/BDORTHO-5M-$DEP.lay | awk -F '"' '{print $4","$6","$8","$10}')
@@ -32,7 +32,7 @@ done
 
 echo "[ composition ]" >> workspace/world/be4_work/prop.txt
 
-echo $DEPS | tr ' ' '\n' | while read DEP
+echo $DEPS | tr ',' '\n' | while read DEP
 do
 	DEP=$(norm $DEP)
 	for level in $(seq 0 15)
