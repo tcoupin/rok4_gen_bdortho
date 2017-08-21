@@ -8,6 +8,8 @@ then
 	exit 1
 fi
 
+echo "Generate departement $DEP"
+
 JOB_NUMBER=$(lscpu | grep "^CPU(s):" | awk '{print $2}')
 
 docker run -v $PWD:$PWD -it --rm -d --name be4-$DEP -w $PWD/workspace/$DEP/be4_work tcoupin/rok4:be4 bash

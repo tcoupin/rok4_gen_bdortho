@@ -8,6 +8,8 @@ then
 	exit 1
 fi
 
+echo "Docker image of departement $DEP"
+
 cp docker/Dockerfile workspace/$DEP/be4_work/
 
 cd workspace/$DEP/be4_work/

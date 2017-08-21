@@ -8,6 +8,8 @@ then
 	exit 1
 fi
 
+echo "Prepare departement $DEP"
+
 URL=$(head -n 1 workspace/$DEP/download/urls.txt)
 PRODUCT=$(echo $URL | grep -o '/[^/]*/file' | awk -F '/' '{print $2}')
 FORMAT=$(echo $PRODUCT | grep -o -e TIFF -e JP2-E100)
