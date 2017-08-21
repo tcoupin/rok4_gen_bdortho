@@ -20,11 +20,15 @@ BOTTOM=$(( $DELTA*($CURRENT_TASK-1) ))
 TOP=$(( $DELTA*($CURRENT_TASK) ))
 
 
-awk -v TOP=$TOP -v BOTTOM=$BOTTOM '{sum=sum+$2;if (sum > BOTTOM && sum <= TOP){print $1}}' $SIZE_FILE | while read DEP
+for DEP in $(awk -v TOP=$TOP -v BOTTOM=$BOTTOM '{sum=sum+$2;if (sum > BOTTOM && sum <= TOP){print $1}}' $SIZE_FILE)
 do
+	COMMAND="true"
 	for script in $*
 	do
-		bash $script $DEP
+		COMMAND="$COMMAND;bash $script $DEP"
 	done
+
+	bash -c "$COMMAND" &
 done
 
+wait

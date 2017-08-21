@@ -21,8 +21,8 @@ jobs:
     - &jobsd
       stage: departments initialization
       script:
-        - bash scripts/.travis/prepare_size.sh 75,93,94,92
-        - bash scripts/.travis/split.sh workspace/sizes 4 $ITEM scripts/departement/download.sh scripts/departement/prepare.sh
+        - bash scripts/.travis/prepare_size.sh 01,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986
+        - bash scripts/.travis/split.sh workspace/sizes 90 $ITEM scripts/departement/download.sh scripts/departement/prepare.sh
       env:
         - ITEM=1
     - <<: *jobsd
@@ -34,9 +34,267 @@ jobs:
     - <<: *jobsd
       env: 
         - ITEM=4
+    - <<: *jobsd
+      env: 
+        - ITEM=5
+    - <<: *jobsd
+      env: 
+        - ITEM=6
+    - <<: *jobsd
+      env: 
+        - ITEM=7
+    - <<: *jobsd
+      env: 
+        - ITEM=8
+    - <<: *jobsd
+      env: 
+        - ITEM=9
+    - <<: *jobsd
+      env: 
+        - ITEM=10
+    - <<: *jobsd
+      env: 
+        - ITEM=11
+    - <<: *jobsd
+      env: 
+        - ITEM=12
+    - <<: *jobsd
+      env: 
+        - ITEM=13
+    - <<: *jobsd
+      env: 
+        - ITEM=14
+    - <<: *jobsd
+      env: 
+        - ITEM=15
+    - <<: *jobsd
+      env: 
+        - ITEM=16
+    - <<: *jobsd
+      env: 
+        - ITEM=17
+    - <<: *jobsd
+      env: 
+        - ITEM=18
+    - <<: *jobsd
+      env: 
+        - ITEM=19
+    - <<: *jobsd
+      env: 
+        - ITEM=20
+    - <<: *jobsd
+      env: 
+        - ITEM=21
+    - <<: *jobsd
+      env: 
+        - ITEM=22
+    - <<: *jobsd
+      env: 
+        - ITEM=23
+    - <<: *jobsd
+      env: 
+        - ITEM=24
+    - <<: *jobsd
+      env: 
+        - ITEM=25
+    - <<: *jobsd
+      env: 
+        - ITEM=26
+    - <<: *jobsd
+      env: 
+        - ITEM=27
+    - <<: *jobsd
+      env: 
+        - ITEM=28
+    - <<: *jobsd
+      env: 
+        - ITEM=29
+    - <<: *jobsd
+      env: 
+        - ITEM=30
+    - <<: *jobsd
+      env: 
+        - ITEM=31
+    - <<: *jobsd
+      env: 
+        - ITEM=32
+    - <<: *jobsd
+      env: 
+        - ITEM=33
+    - <<: *jobsd
+      env: 
+        - ITEM=34
+    - <<: *jobsd
+      env: 
+        - ITEM=35
+    - <<: *jobsd
+      env: 
+        - ITEM=36
+    - <<: *jobsd
+      env: 
+        - ITEM=37
+    - <<: *jobsd
+      env: 
+        - ITEM=38
+    - <<: *jobsd
+      env: 
+        - ITEM=39
+    - <<: *jobsd
+      env: 
+        - ITEM=40
+    - <<: *jobsd
+      env: 
+        - ITEM=41
+    - <<: *jobsd
+      env: 
+        - ITEM=42
+    - <<: *jobsd
+      env: 
+        - ITEM=43
+    - <<: *jobsd
+      env: 
+        - ITEM=44
+    - <<: *jobsd
+      env: 
+        - ITEM=45
+    - <<: *jobsd
+      env: 
+        - ITEM=46
+    - <<: *jobsd
+      env: 
+        - ITEM=47
+    - <<: *jobsd
+      env: 
+        - ITEM=48
+    - <<: *jobsd
+      env: 
+        - ITEM=49
+    - <<: *jobsd
+      env: 
+        - ITEM=50
+    - <<: *jobsd
+      env: 
+        - ITEM=51
+    - <<: *jobsd
+      env: 
+        - ITEM=52
+    - <<: *jobsd
+      env: 
+        - ITEM=53
+    - <<: *jobsd
+      env: 
+        - ITEM=54
+    - <<: *jobsd
+      env: 
+        - ITEM=55
+    - <<: *jobsd
+      env: 
+        - ITEM=56
+    - <<: *jobsd
+      env: 
+        - ITEM=57
+    - <<: *jobsd
+      env: 
+        - ITEM=58
+    - <<: *jobsd
+      env: 
+        - ITEM=59
+    - <<: *jobsd
+      env: 
+        - ITEM=60
+    - <<: *jobsd
+      env: 
+        - ITEM=61
+    - <<: *jobsd
+      env: 
+        - ITEM=62
+    - <<: *jobsd
+      env: 
+        - ITEM=63
+    - <<: *jobsd
+      env: 
+        - ITEM=64
+    - <<: *jobsd
+      env: 
+        - ITEM=65
+    - <<: *jobsd
+      env: 
+        - ITEM=66
+    - <<: *jobsd
+      env: 
+        - ITEM=67
+    - <<: *jobsd
+      env: 
+        - ITEM=68
+    - <<: *jobsd
+      env: 
+        - ITEM=69
+    - <<: *jobsd
+      env: 
+        - ITEM=70
+    - <<: *jobsd
+      env: 
+        - ITEM=71
+    - <<: *jobsd
+      env: 
+        - ITEM=72
+    - <<: *jobsd
+      env: 
+        - ITEM=73
+    - <<: *jobsd
+      env: 
+        - ITEM=74
+    - <<: *jobsd
+      env: 
+        - ITEM=75
+    - <<: *jobsd
+      env: 
+        - ITEM=76
+    - <<: *jobsd
+      env: 
+        - ITEM=77
+    - <<: *jobsd
+      env: 
+        - ITEM=78
+    - <<: *jobsd
+      env: 
+        - ITEM=79
+    - <<: *jobsd
+      env: 
+        - ITEM=80
+    - <<: *jobsd
+      env: 
+        - ITEM=81
+    - <<: *jobsd
+      env: 
+        - ITEM=82
+    - <<: *jobsd
+      env: 
+        - ITEM=83
+    - <<: *jobsd
+      env: 
+        - ITEM=84
+    - <<: *jobsd
+      env: 
+        - ITEM=85
+    - <<: *jobsd
+      env: 
+        - ITEM=86
+    - <<: *jobsd
+      env: 
+        - ITEM=87
+    - <<: *jobsd
+      env: 
+        - ITEM=88
+    - <<: *jobsd
+      env: 
+        - ITEM=89
+    - <<: *jobsd
+      env: 
+        - ITEM=90
     - &jobsg
       stage: departments generate
-      script: bash scripts/.travis/split.sh workspace/sizes 4 $ITEM scripts/departement/generate.sh scripts/departement/docker-image.sh
+      script: bash scripts/.travis/split.sh workspace/sizes 90 $ITEM scripts/departement/generate.sh scripts/departement/docker-image.sh
       env:
         - ITEM=1
       deploy:
@@ -58,12 +316,270 @@ jobs:
     - <<: *jobsg
       env: 
         - ITEM=4
+    - <<: *jobsg
+      env: 
+        - ITEM=5
+    - <<: *jobsg
+      env: 
+        - ITEM=6
+    - <<: *jobsg
+      env: 
+        - ITEM=7
+    - <<: *jobsg
+      env: 
+        - ITEM=8
+    - <<: *jobsg
+      env: 
+        - ITEM=9
+    - <<: *jobsg
+      env: 
+        - ITEM=10
+    - <<: *jobsg
+      env: 
+        - ITEM=11
+    - <<: *jobsg
+      env: 
+        - ITEM=12
+    - <<: *jobsg
+      env: 
+        - ITEM=13
+    - <<: *jobsg
+      env: 
+        - ITEM=14
+    - <<: *jobsg
+      env: 
+        - ITEM=15
+    - <<: *jobsg
+      env: 
+        - ITEM=16
+    - <<: *jobsg
+      env: 
+        - ITEM=17
+    - <<: *jobsg
+      env: 
+        - ITEM=18
+    - <<: *jobsg
+      env: 
+        - ITEM=19
+    - <<: *jobsg
+      env: 
+        - ITEM=20
+    - <<: *jobsg
+      env: 
+        - ITEM=21
+    - <<: *jobsg
+      env: 
+        - ITEM=22
+    - <<: *jobsg
+      env: 
+        - ITEM=23
+    - <<: *jobsg
+      env: 
+        - ITEM=24
+    - <<: *jobsg
+      env: 
+        - ITEM=25
+    - <<: *jobsg
+      env: 
+        - ITEM=26
+    - <<: *jobsg
+      env: 
+        - ITEM=27
+    - <<: *jobsg
+      env: 
+        - ITEM=28
+    - <<: *jobsg
+      env: 
+        - ITEM=29
+    - <<: *jobsg
+      env: 
+        - ITEM=30
+    - <<: *jobsg
+      env: 
+        - ITEM=31
+    - <<: *jobsg
+      env: 
+        - ITEM=32
+    - <<: *jobsg
+      env: 
+        - ITEM=33
+    - <<: *jobsg
+      env: 
+        - ITEM=34
+    - <<: *jobsg
+      env: 
+        - ITEM=35
+    - <<: *jobsg
+      env: 
+        - ITEM=36
+    - <<: *jobsg
+      env: 
+        - ITEM=37
+    - <<: *jobsg
+      env: 
+        - ITEM=38
+    - <<: *jobsg
+      env: 
+        - ITEM=39
+    - <<: *jobsg
+      env: 
+        - ITEM=40
+    - <<: *jobsg
+      env: 
+        - ITEM=41
+    - <<: *jobsg
+      env: 
+        - ITEM=42
+    - <<: *jobsg
+      env: 
+        - ITEM=43
+    - <<: *jobsg
+      env: 
+        - ITEM=44
+    - <<: *jobsg
+      env: 
+        - ITEM=45
+    - <<: *jobsg
+      env: 
+        - ITEM=46
+    - <<: *jobsg
+      env: 
+        - ITEM=47
+    - <<: *jobsg
+      env: 
+        - ITEM=48
+    - <<: *jobsg
+      env: 
+        - ITEM=49
+    - <<: *jobsg
+      env: 
+        - ITEM=50
+    - <<: *jobsg
+      env: 
+        - ITEM=51
+    - <<: *jobsg
+      env: 
+        - ITEM=52
+    - <<: *jobsg
+      env: 
+        - ITEM=53
+    - <<: *jobsg
+      env: 
+        - ITEM=54
+    - <<: *jobsg
+      env: 
+        - ITEM=55
+    - <<: *jobsg
+      env: 
+        - ITEM=56
+    - <<: *jobsg
+      env: 
+        - ITEM=57
+    - <<: *jobsg
+      env: 
+        - ITEM=58
+    - <<: *jobsg
+      env: 
+        - ITEM=59
+    - <<: *jobsg
+      env: 
+        - ITEM=60
+    - <<: *jobsg
+      env: 
+        - ITEM=61
+    - <<: *jobsg
+      env: 
+        - ITEM=62
+    - <<: *jobsg
+      env: 
+        - ITEM=63
+    - <<: *jobsg
+      env: 
+        - ITEM=64
+    - <<: *jobsg
+      env: 
+        - ITEM=65
+    - <<: *jobsg
+      env: 
+        - ITEM=66
+    - <<: *jobsg
+      env: 
+        - ITEM=67
+    - <<: *jobsg
+      env: 
+        - ITEM=68
+    - <<: *jobsg
+      env: 
+        - ITEM=69
+    - <<: *jobsg
+      env: 
+        - ITEM=70
+    - <<: *jobsg
+      env: 
+        - ITEM=71
+    - <<: *jobsg
+      env: 
+        - ITEM=72
+    - <<: *jobsg
+      env: 
+        - ITEM=73
+    - <<: *jobsg
+      env: 
+        - ITEM=74
+    - <<: *jobsg
+      env: 
+        - ITEM=75
+    - <<: *jobsg
+      env: 
+        - ITEM=76
+    - <<: *jobsg
+      env: 
+        - ITEM=77
+    - <<: *jobsg
+      env: 
+        - ITEM=78
+    - <<: *jobsg
+      env: 
+        - ITEM=79
+    - <<: *jobsg
+      env: 
+        - ITEM=80
+    - <<: *jobsg
+      env: 
+        - ITEM=81
+    - <<: *jobsg
+      env: 
+        - ITEM=82
+    - <<: *jobsg
+      env: 
+        - ITEM=83
+    - <<: *jobsg
+      env: 
+        - ITEM=84
+    - <<: *jobsg
+      env: 
+        - ITEM=85
+    - <<: *jobsg
+      env: 
+        - ITEM=86
+    - <<: *jobsg
+      env: 
+        - ITEM=87
+    - <<: *jobsg
+      env: 
+        - ITEM=88
+    - <<: *jobsg
+      env: 
+        - ITEM=89
+    - <<: *jobsg
+      env: 
+        - ITEM=90
     - stage: world download
-      script: bash scripts/world/download.sh 75,93,94,92
+      script: bash scripts/world/download.sh 01,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986
     - stage: world prepare
       script: 
         - chmod -R 777 workspace
-        - bash scripts/world/prepare.sh 75,93,94,92
+        - bash scripts/world/prepare.sh 01,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986
     - stage: world generate
       script: 
         - chmod -R 777 workspace

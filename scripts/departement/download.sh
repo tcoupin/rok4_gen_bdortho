@@ -19,6 +19,6 @@ cd ..
 cat $(ls -X raw/*.7z*) > data.7z
 7z x data.7z
 mkdir data
-find . -name "*.jp2" | xargs -I FILE mv FILE ./data
+find . -name "*.jp2" -o -name "*.tif" -o -name "*.tfw" | xargs -I FILE mv FILE ./data
 rm *.7z.* *.7z
 rm -r BDORTHO*
