@@ -44,32 +44,30 @@ jobs:
   include:
 EOF
 
-
-
-###### DOWNLOAD DEP
+###### Init DEP
 cat >> .travis.yml << EOF
-    - &download
-      stage: departement download
-      script: bash scripts/.travis/batch.sh scripts/departement/download.sh $DEPS
+    - &jobsd
+      stage: departments initialization
+      script:
+        - bash scripts/.travis/prepare_size.sh $DEPS
+        - bash scripts/.travis/split.sh workspace/sizes $SPLIT \$ITEM scripts/departement/download.sh scripts/departement/prepare.sh
+      env:
+        - ITEM=1
 EOF
+for i in $(seq 2 $SPLIT)
+do
+    echo "    - <<: *jobsd" >> .travis.yml
+    echo "      env: " >> .travis.yml
+    echo "        - ITEM=$i" >> .travis.yml
+done
 
-###### PREPARE DEP
+###### generation DEP
 cat >> .travis.yml << EOF
-    - &prepare
-      stage: departement prepare
-      script: 
-        - chmod -R 777 workspace
-        - bash scripts/.travis/batch.sh scripts/departement/prepare.sh $DEPS
-EOF
-
-
-###### GENERATE DEP
-cat >> .travis.yml << EOF
-    - &generate
-      stage: departement generate
-      script: 
-        - chmod -R 777 workspace
-        - bash scripts/.travis/split.sh $SPLIT 1 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - &jobsg
+      stage: departments generate
+      script: bash scripts/.travis/split.sh workspace/sizes $SPLIT \$ITEM scripts/departement/generate.sh scripts/departement/docker-image.sh
+      env:
+        - ITEM=1
       deploy:
         provider: releases
         api_key: \$GH_TOKEN
@@ -83,13 +81,10 @@ cat >> .travis.yml << EOF
 EOF
 for i in $(seq 2 $SPLIT)
 do
-    echo "    - <<: *generate" >> .travis.yml
-    echo "      script: " >> .travis.yml
-    echo "        - chmod -R 777 workspace" >> .travis.yml
-    echo "        - bash scripts/.travis/split.sh $SPLIT $i scripts/departement/generate.sh scripts/departement/docker-image.sh" >> .travis.yml
+    echo "    - <<: *jobsg" >> .travis.yml
+    echo "      env: " >> .travis.yml
+    echo "        - ITEM=$i" >> .travis.yml
 done
-
-
 
 ###### DOWNLOAD WORLD
 cat >> .travis.yml << EOF

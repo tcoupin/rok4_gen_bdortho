@@ -10,20 +10,10 @@ fi
 
 echo "Download departement $DEP"
 
-if [ ! -d workspace/$DEP/download/raw ]
-then
-	mkdir -p workspace/$DEP/download/raw
-fi
-if [ -d workspace/$DEP/download/data ]
-then
-	rm -r workspace/$DEP/download/data
-fi
-	
-cd workspace/$DEP/download
-#curl -s "http://pro.ign.fr/bdortho-5m" | grep -o "https://wxs-tele[^\"]*" | grep BDORTHO | grep "D$DEP" > urls.txt
-cat ../../../BDortho5M.list | grep BDORTHO | grep "D$DEP" > urls.txt
-sed -i "s/https/http/g" urls.txt
-cd raw
+bash $(dirname $0)/download/urls.sh $DEP
+
+
+cd workspace/$DEP/download/raw
 wget -N --progress=dot:mega $(cat ../urls.txt | tr '\n' ' ')
 cd ..
 cat $(ls -X raw/*.7z*) > data.7z
