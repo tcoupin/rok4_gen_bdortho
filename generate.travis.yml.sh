@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SPLIT=90
+
 function norm () {
     echo $1 | tr '[:lower:]' '[:upper:]' | sed "s/^/000/" | grep -o '...$'
 }
@@ -15,10 +17,8 @@ then
     exit 1
 fi
 
-IFS=',' read -r -a DEP <<< "$@"
-
-FIRST_DEP=$( norm ${DEP[0]} )
-DEP=("${DEP[@]:1}")
+NB_DEP=$(echo $DEPS | tr ',' '\n' | wc -l)
+SPLIT=$(( $NB_DEP<$SPLIT?$NB_DEP:$SPLIT ))
 
 ### BEGIN
 cat > .travis.yml << EOF
@@ -50,15 +50,8 @@ EOF
 cat >> .travis.yml << EOF
     - &download
       stage: departement download
-      script: bash scripts/departement/download.sh \$DEP
-      env: DEP=$FIRST_DEP
+      script: bash scripts/.travis/batch.sh scripts/departement/download.sh $DEPS
 EOF
-for i in "${!DEP[@]}"
-do
-    echo "    - <<: *download" >> .travis.yml
-    echo "      env: DEP=$(norm ${DEP[$i]})" >> .travis.yml
-done
-
 
 ###### PREPARE DEP
 cat >> .travis.yml << EOF
@@ -66,14 +59,8 @@ cat >> .travis.yml << EOF
       stage: departement prepare
       script: 
         - chmod -R 777 workspace
-        - bash scripts/departement/prepare.sh \$DEP
-      env: DEP=$FIRST_DEP
+        - bash scripts/.travis/batch.sh scripts/departement/prepare.sh $DEPS
 EOF
-for i in "${!DEP[@]}"
-do
-    echo "    - <<: *prepare" >> .travis.yml
-    echo "      env: DEP=$(norm ${DEP[$i]})" >> .travis.yml
-done
 
 
 ###### GENERATE DEP
@@ -82,8 +69,7 @@ cat >> .travis.yml << EOF
       stage: departement generate
       script: 
         - chmod -R 777 workspace
-        - bash scripts/departement/generate.sh \$DEP
-      env: DEP=$FIRST_DEP
+        - bash scripts/.travis/split.sh $SPLIT 1 scripts/departement/generate.sh scripts/departement/docker-image.sh
       deploy:
         provider: releases
         api_key: \$GH_TOKEN
@@ -95,37 +81,20 @@ cat >> .travis.yml << EOF
           repo: tcoupin/rok4_gen_bdortho
           tags: true
 EOF
-for i in "${!DEP[@]}"
+for i in $(seq 2 $SPLIT)
 do
     echo "    - <<: *generate" >> .travis.yml
-    echo "      env: DEP=$(norm ${DEP[$i]})" >> .travis.yml
+    echo "      script: " >> .travis.yml
+    echo "        - chmod -R 777 workspace" >> .travis.yml
+    echo "        - bash scripts/.travis/split.sh $SPLIT $i scripts/departement/generate.sh scripts/departement/docker-image.sh" >> .travis.yml
 done
-
-
-
-###### DOCKER DEP
-cat >> .travis.yml << EOF
-    - &docker
-      stage: departement docker
-      script: 
-        - chmod -R 777 workspace
-        - bash scripts/departement/docker-image.sh \$DEP
-      env: DEP=$FIRST_DEP
-EOF
-for i in "${!DEP[@]}"
-do
-    echo "    - <<: *docker" >> .travis.yml
-    echo "      env: DEP=$(norm ${DEP[$i]})" >> .travis.yml
-done
-
 
 
 
 ###### DOWNLOAD WORLD
 cat >> .travis.yml << EOF
     - stage: world download
-      script: bash scripts/world/download.sh \$DEPS
-      env: DEPS="$DEPS"
+      script: bash scripts/world/download.sh $DEPS
 EOF
 
 ###### PREPARE WORLD
@@ -133,8 +102,7 @@ cat >> .travis.yml << EOF
     - stage: world prepare
       script: 
         - chmod -R 777 workspace
-        - bash scripts/world/prepare.sh \$DEPS
-      env: DEPS="$DEPS"
+        - bash scripts/world/prepare.sh $DEPS
 EOF
 
 ###### GENERATE WORLD
@@ -143,7 +111,6 @@ cat >> .travis.yml << EOF
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/generate.sh
-      env: DEPS="$DEPS"
       deploy:
         provider: releases
         api_key: \$GH_TOKEN
@@ -162,6 +129,5 @@ cat >> .travis.yml << EOF
       script: 
         - chmod -R 777 workspace
         - bash scripts/world/docker-image.sh 
-      env: DEPS="$DEPS"
 
 EOF

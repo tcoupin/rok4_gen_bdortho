@@ -31,5 +31,5 @@ eval "echo \"$(cat config/prop.txt.template)\"" > workspace/$DEP/be4_work/prop.t
 eval "echo \"$(cat config/sources.txt.template)\"" > workspace/$DEP/be4_work/sources.txt
 cp config/PM.tms workspace/$DEP/be4_work
 
-docker run -it -v $PWD:$PWD -u $UID --rm -w $PWD/workspace/$DEP/be4_work tcoupin/rok4:be4 be4.pl --conf=prop.txt --env=env.txt
+docker run -v $PWD:$PWD -u $UID --rm -w $PWD/workspace/$DEP/be4_work tcoupin/rok4:be4 be4.pl --conf=prop.txt --env=env.txt
 
