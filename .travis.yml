@@ -20,17 +20,17 @@ jobs:
   include:
     - &download
       stage: departement download
-      script: bash scripts/.travis/batch.sh scripts/departement/download.sh 75,93,94,92
+      script: bash scripts/.travis/batch.sh scripts/departement/download.sh 001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986
     - &prepare
       stage: departement prepare
       script: 
         - chmod -R 777 workspace
-        - bash scripts/.travis/batch.sh scripts/departement/prepare.sh 75,93,94,92
+        - bash scripts/.travis/batch.sh scripts/departement/prepare.sh 001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986
     - &generate
       stage: departement generate
       script: 
         - chmod -R 777 workspace
-        - bash scripts/.travis/split.sh 4 1 scripts/departement/generate.sh scripts/departement/docker-image.sh
+        - bash scripts/.travis/split.sh 90 1 scripts/departement/generate.sh scripts/departement/docker-image.sh
       deploy:
         provider: releases
         api_key: $GH_TOKEN
@@ -44,21 +44,365 @@ jobs:
     - <<: *generate
       script: 
         - chmod -R 777 workspace
-        - bash scripts/.travis/split.sh 4 2 scripts/departement/generate.sh scripts/departement/docker-image.sh
+        - bash scripts/.travis/split.sh 90 2 scripts/departement/generate.sh scripts/departement/docker-image.sh
     - <<: *generate
       script: 
         - chmod -R 777 workspace
-        - bash scripts/.travis/split.sh 4 3 scripts/departement/generate.sh scripts/departement/docker-image.sh
+        - bash scripts/.travis/split.sh 90 3 scripts/departement/generate.sh scripts/departement/docker-image.sh
     - <<: *generate
       script: 
         - chmod -R 777 workspace
-        - bash scripts/.travis/split.sh 4 4 scripts/departement/generate.sh scripts/departement/docker-image.sh
+        - bash scripts/.travis/split.sh 90 4 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 5 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 6 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 7 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 8 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 9 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 10 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 11 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 12 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 13 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 14 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 15 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 16 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 17 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 18 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 19 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 20 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 21 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 22 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 23 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 24 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 25 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 26 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 27 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 28 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 29 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 30 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 31 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 32 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 33 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 34 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 35 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 36 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 37 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 38 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 39 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 40 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 41 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 42 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 43 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 44 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 45 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 46 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 47 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 48 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 49 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 50 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 51 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 52 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 53 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 54 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 55 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 56 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 57 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 58 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 59 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 60 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 61 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 62 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 63 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 64 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 65 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 66 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 67 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 68 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 69 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 70 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 71 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 72 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 73 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 74 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 75 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 76 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 77 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 78 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 79 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 80 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 81 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 82 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 83 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 84 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 85 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 86 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 87 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 88 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 89 scripts/departement/generate.sh scripts/departement/docker-image.sh
+    - <<: *generate
+      script: 
+        - chmod -R 777 workspace
+        - bash scripts/.travis/split.sh 90 90 scripts/departement/generate.sh scripts/departement/docker-image.sh
     - stage: world download
-      script: bash scripts/world/download.sh 75,93,94,92
+      script: bash scripts/world/download.sh 001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986
     - stage: world prepare
       script: 
         - chmod -R 777 workspace
-        - bash scripts/world/prepare.sh 75,93,94,92
+        - bash scripts/world/prepare.sh 001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,021,022,023,024,025,026,027,028,029,02A,02B,030,031,032,033,034,035,036,037,038,039,040,041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,086,087,088,089,090,091,092,093,094,095,971,972,973,974,975,976,977,978,986
     - stage: world generate
       script: 
         - chmod -R 777 workspace
