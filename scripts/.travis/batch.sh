@@ -17,4 +17,4 @@ then
 	exit 1
 fi
 
-echo $DEPS | tr ',' '\n' | norm | xargs -n 1 -P 10 bash $SCRIPT
+echo $DEPS | tr ',' '\n' | norm | xargs -n 1 bash $SCRIPT
